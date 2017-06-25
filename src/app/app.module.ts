@@ -8,10 +8,12 @@ import { NgxElectronModule } from './ngx-electron/ngx-electron.module';
 import { AppRoutingModule } from './app-routing.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import { AppComponent } from './app.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HomePageComponent
     ],
     imports: [
         BrowserModule,

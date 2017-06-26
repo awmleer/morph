@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { NgxElectronModule } from './ngx-electron/ngx-electron.module';
 // app
 import { AppRoutingModule } from './app-routing.module';
-import { WelcomeModule } from './welcome/welcome.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
@@ -21,7 +20,6 @@ import { HomePageComponent } from './home-page/home-page.component';
         HttpModule,
         AppRoutingModule,
         NgxElectronModule,
-        WelcomeModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

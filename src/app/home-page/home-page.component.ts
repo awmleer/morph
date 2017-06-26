@@ -1,4 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {NgxElectronService} from "../ngx-electron/ngx-electron.service";
 
 @Component({
     selector: 'app-home-page',
@@ -7,7 +8,9 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
     @ViewChild('holder') holderRef : ElementRef;
-    constructor() { }
+    constructor(
+        private electronService:NgxElectronService
+    ) { }
 
     ngOnInit() {
         let holder=this.holderRef.nativeElement;
@@ -21,10 +24,16 @@ export class HomePageComponent implements OnInit {
         holder.ondrop = (e) => {
             e.preventDefault();
             for (let f of e.dataTransfer.files) {
-                console.log('File(s) you dragged here: ', f.path)
+                console.log('File(s) you dragged here: ', f.path);
+                console.log(this.electronService.readFile(f.path));
             }
             return false;
         }
     }
+
+    // openFile(path:string){
+    //     // console.log(this.electronService.ipcRenderer.send('openFile',{path:path}));
+    //     console.log(this.electronService.);
+    // }
 
 }

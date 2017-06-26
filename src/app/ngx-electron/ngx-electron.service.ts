@@ -22,6 +22,10 @@ export class NgxElectronService {
         }
     }
 
+    readFile(path:string):string{
+        return this.remote.require('fs').readFileSync(path).toString();
+    }
+
     send(data: any): void {
         this.ipcRenderer.send(ELECTRON_HOST, data);
     }

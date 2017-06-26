@@ -12,6 +12,10 @@ export class HomePageComponent implements OnInit {
         private electronService:NgxElectronService
     ) { }
 
+    startPresentation(){
+        this.electronService.send('enterFullScreen');
+    }
+
     ngOnInit() {
         let holder=this.holderRef.nativeElement;
         console.log(holder);

@@ -15,7 +15,7 @@ export class WelcomeScreenComponent {
 
 
     gettingStarted(): void {
-        this.electron.send('ping');
+        // this.electron.send('ping');
         this.electron.listener$.subscribe(message => {
             if (message === 'pong') {
                 this.electron.shell.beep();

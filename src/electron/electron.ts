@@ -14,12 +14,17 @@ const mainWindowSettings: Electron.BrowserWindowConstructorOptions = {
 };
 
 function initMainListener() {
-    ipcMain.on('ELECTRON_BRIDGE_HOST', (event, msg) => {
-        console.log('msg received', msg);
-        if (msg === 'ping') {
-            event.sender.send('ELECTRON_BRIDGE_CLIENT', 'pong');
-        }
+    ipcMain.on('ELECTRON_BRIDGE_HOST', (event, data) => {
+        // if (data === 'ping') {
+        //     event.sender.send('ELECTRON_BRIDGE_CLIENT', 'pong');
+        // }
+
     });
+    ipcMain.on('enterFullScreen',(event,data)=>{
+        console.log('got enterFullScreen event');
+        applicationRef.setFullScreen(true);
+        // event.returnValue=true;
+    })
 }
 
 function createWindow() {

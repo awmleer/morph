@@ -1,10 +1,11 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
 import { client } from 'electron-connect';
 import * as path from 'path';
+import { environment } from '../environments/environment'
 
 let applicationRef: Electron.BrowserWindow = null;
 
-const debugMode = false;
+const debugMode = environment.debug;
 
 const mainWindowSettings: Electron.BrowserWindowConstructorOptions = {
     width: 800,
@@ -30,6 +31,7 @@ function initMainListener() {
 function createWindow() {
     applicationRef = new BrowserWindow(mainWindowSettings);
     applicationRef.loadURL(`file:///${__dirname}/index.html`);
+    applicationRef.webContents.openDevTools();
     if (debugMode) {
         // Open the DevTools.
         applicationRef.webContents.openDevTools();

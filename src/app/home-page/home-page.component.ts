@@ -1,5 +1,6 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
 import {NgxElectronService} from "../ngx-electron/ngx-electron.service";
+import marked from 'marked';
 
 @Component({
     selector: 'app-home-page',
@@ -8,8 +9,11 @@ import {NgxElectronService} from "../ngx-electron/ngx-electron.service";
 })
 export class HomePageComponent implements OnInit {
     @ViewChild('holder') holderRef : ElementRef;
+    parsedHtml:string='<p>test</p>';
+
     constructor(
-        private electronService:NgxElectronService
+        private electronService:NgxElectronService,
+        private ngZone: NgZone
     ) { }
 
     startPresentation(){
@@ -29,10 +33,20 @@ export class HomePageComponent implements OnInit {
             e.preventDefault();
             for (let f of e.dataTransfer.files) {
                 console.log('File(s) you dragged here: ', f.path);
-                console.log(this.electronService.readFile(f.path));
+                let text=this.electronService.readFile(f.path);
+                console.log(text);
+                this.ngZone.run(()=>{
+                    this.parseTest(text);
+                });
             }
             return false;
         }
+    }
+
+    parseTest(text:string){
+        let m = marked.setOptions({});
+        this.parsedHtml=m.parse(text);
+        console.log(this.parsedHtml);
     }
 
     // openFile(path:string){

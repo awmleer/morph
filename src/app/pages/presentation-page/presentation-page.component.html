@@ -4,9 +4,9 @@
 <button (click)="previousPage()">Previous</button>
 <button (click)="nextPage()">Next</button>
 <div *ngIf="currentPage>=0">
-    <div *ngIf="currentPage>=1" [innerHtml]="slideTexts[currentPage-1] | markdownToHtml"></div>
-    <div [innerHtml]="slideTexts[currentPage] | markdownToHtml"></div>
-    <div *ngIf="currentPage<slideTexts.length-1" [innerHtml]="slideTexts[currentPage+1] | markdownToHtml"></div>
+    <div class="markdown" *ngIf="currentPage>=1" [innerHtml]="slideTexts[currentPage-1] | markdownToHtml"></div>
+    <div class="markdown" [innerHtml]="slideTexts[currentPage] | markdownToHtml"></div>
+    <div class="markdown" *ngIf="currentPage<slideTexts.length-1" [innerHtml]="slideTexts[currentPage+1] | markdownToHtml"></div>
 
     <div>{{currentPage+1}}/{{slideTexts.length}}</div>
 </div>

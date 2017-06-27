@@ -7,7 +7,7 @@ import {NgxElectronService} from "../../services/ngx-electron/ngx-electron.servi
     templateUrl: './presentation-page.component.html',
     styleUrls: [
         './presentation-page.component.scss',
-        '../../../assets/themes/github.css'
+        './../../../assets/themes/github.css'
     ]
 })
 export class PresentationPageComponent implements OnInit {

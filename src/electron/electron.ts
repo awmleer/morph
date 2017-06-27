@@ -30,7 +30,7 @@ function initMainListener() {
 
 function createWindow() {
     applicationRef = new BrowserWindow(mainWindowSettings);
-    applicationRef.loadURL(`file:///${__dirname}/index.html`);
+    applicationRef.loadURL(`file:///${__dirname}/../index.html`);
     applicationRef.webContents.openDevTools();
     if (debugMode) {
         // Open the DevTools.

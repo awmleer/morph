@@ -44,6 +44,7 @@ export class HomePageComponent implements OnInit {
     }
 
     parseTest(text:string){
+
         let m = marked.setOptions({});
         this.parsedHtml=m.parse(text);
         console.log(this.parsedHtml);

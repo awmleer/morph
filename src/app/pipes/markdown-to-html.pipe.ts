@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import marked from 'marked';
+import * as highlight from 'highlightjs';
 
 @Pipe({
     name: 'markdownToHtml'
@@ -7,8 +8,12 @@ import marked from 'marked';
 export class MarkdownToHtmlPipe implements PipeTransform {
 
     transform(text: any): string {
-        let m = marked.setOptions({});
-        console.log(m.parse(text));//just for debug
+        console.log(highlight);
+        let m = marked.setOptions({
+            highlight: function (code) {
+                return highlight.highlightAuto(code).value;
+            }
+        });
         return m.parse(text);
     }
 

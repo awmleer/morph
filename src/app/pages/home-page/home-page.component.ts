@@ -23,7 +23,6 @@ export class HomePageComponent implements OnInit {
                 filePath: this.filePath
             }]);
         }
-        this.electronService.send('enterFullScreen');
     }
 
     ngOnInit() {

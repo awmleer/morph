@@ -22,6 +22,7 @@ export class PresentationPageComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        this.electronService.send('enterFullScreen');
         this.route.params.subscribe((params:Params)=>{
             console.log(params);
             this.filePath=params['filePath'];

@@ -5,8 +5,8 @@
   "main": "electron/electron.js",
   "scripts": {
     "ng": "ng",
-    "ng.watch":"npm run start.watch",
-    "electron.watch":"npm run watch",
+    "ng.watch": "npm run start.watch",
+    "electron.watch": "npm run watch",
     "start": "npm run build.ng && npm run build.tasks && npm run build.electron && npm run start.electron",
     "start.watch": "npm run build.ng.watch",
     "start.electron": "electron dist/electron/electron.js",
@@ -43,6 +43,7 @@
     "electron": "^1.6.8",
     "electron-connect": "^0.4.8",
     "electron-packager": "^8.7.1",
+    "highlightjs": "^9.10.0",
     "marked": "^0.3.6",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"

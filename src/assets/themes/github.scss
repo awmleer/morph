@@ -698,3 +698,100 @@
 .markdown /deep/ hr {
   border-bottom-color: #eee;
 }
+
+
+
+
+.markdown /deep/ .hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #333;
+    background: #f8f8f8;
+}
+
+.markdown /deep/ .hljs-comment,
+.markdown /deep/ .hljs-quote {
+    color: #998;
+    font-style: italic;
+}
+
+.markdown /deep/ .hljs-keyword,
+.markdown /deep/ .hljs-selector-tag,
+.markdown /deep/ .hljs-subst {
+    color: #333;
+    font-weight: bold;
+}
+
+.markdown /deep/ .hljs-number,
+.markdown /deep/ .hljs-literal,
+.markdown /deep/ .hljs-variable,
+.markdown /deep/ .hljs-template-variable,
+.markdown /deep/ .hljs-tag .hljs-attr {
+    color: #008080;
+}
+
+.markdown /deep/ .hljs-string,
+.markdown /deep/ .hljs-doctag {
+    color: #d14;
+}
+
+.markdown /deep/ .hljs-title,
+.markdown /deep/ .hljs-section,
+.markdown /deep/ .hljs-selector-id {
+    color: #900;
+    font-weight: bold;
+}
+
+.markdown /deep/ .hljs-subst {
+    font-weight: normal;
+}
+
+.markdown /deep/ .hljs-type,
+.markdown /deep/ .hljs-class .hljs-title {
+    color: #458;
+    font-weight: bold;
+}
+
+.markdown /deep/ .hljs-tag,
+.markdown /deep/ .hljs-name,
+.markdown /deep/ .hljs-attribute {
+    color: #000080;
+    font-weight: normal;
+}
+
+.markdown /deep/ .hljs-regexp,
+.markdown /deep/ .hljs-link {
+    color: #009926;
+}
+
+.markdown /deep/ .hljs-symbol,
+.markdown /deep/ .hljs-bullet {
+    color: #990073;
+}
+
+.markdown /deep/ .hljs-built_in,
+.markdown /deep/ .hljs-builtin-name {
+    color: #0086b3;
+}
+
+.markdown /deep/ .hljs-meta {
+    color: #999;
+    font-weight: bold;
+}
+
+.markdown /deep/ .hljs-deletion {
+    background: #fdd;
+}
+
+.markdown /deep/ .hljs-addition {
+    background: #dfd;
+}
+
+.markdown /deep/ .hljs-emphasis {
+    font-style: italic;
+}
+
+.markdown /deep/ .hljs-strong {
+    font-weight: bold;
+}

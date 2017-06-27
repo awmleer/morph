@@ -10,6 +10,7 @@ import {NgxElectronService} from "../../services/ngx-electron/ngx-electron.servi
 export class PresentationPageComponent implements OnInit {
     filePath:string=null;
     slideTexts:string[]=[];
+    currentPage:number=-1;
 
     constructor(
         private electronService:NgxElectronService,
@@ -21,8 +22,21 @@ export class PresentationPageComponent implements OnInit {
             console.log(params);
             this.filePath=params['filePath'];
             this.parseFile();
+            this.currentPage=0;//set currentPage
         });
         // this.parseTest(text);
+    }
+
+    previousPage(){
+        if(this.currentPage>0){
+            this.currentPage--;
+        }
+    }
+
+    nextPage(){
+        if (this.currentPage<this.slideTexts.length-1) {
+            this.currentPage++;
+        }
     }
 
     parseFile(){
@@ -65,12 +79,5 @@ export class PresentationPageComponent implements OnInit {
         }
         return slideTexts;
     }
-
-    // parseTest(text:string){
-
-        // let m = marked.setOptions({});
-        // this.parsedHtml=m.parse(text);
-        // console.log(this.parsedHtml);
-    // }
 
 }

@@ -1,12 +1,11 @@
-<p>
-    presentation-page works!
-</p>
-<button (click)="previousPage()">Previous</button>
-<button (click)="nextPage()">Next</button>
-<div *ngIf="currentPage>=0">
-    <div class="markdown" *ngIf="currentPage>=1" [innerHtml]="slideTexts[currentPage-1] | markdownToHtml"></div>
-    <div class="markdown" [innerHtml]="slideTexts[currentPage] | markdownToHtml"></div>
-    <div class="markdown" *ngIf="currentPage<slideTexts.length-1" [innerHtml]="slideTexts[currentPage+1] | markdownToHtml"></div>
+<div class="control-button-group">
+    <button (click)="previousPage()">Previous</button>
+    <button (click)="nextPage()">Next</button>
+</div>
+<div *ngIf="currentPage>=0" class="background">
+    <div class="markdown previous" *ngIf="currentPage>=1" [innerHtml]="slideTexts[currentPage-1] | markdownToHtml"></div>
+    <div class="markdown current" [innerHtml]="slideTexts[currentPage] | markdownToHtml"></div>
+    <div class="markdown next" *ngIf="currentPage<slideTexts.length-1" [innerHtml]="slideTexts[currentPage+1] | markdownToHtml"></div>
 
     <div>{{currentPage+1}}/{{slideTexts.length}}</div>
 </div>

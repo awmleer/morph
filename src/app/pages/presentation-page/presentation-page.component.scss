@@ -29,5 +29,22 @@
 }
 
 .markdown.next{
-    right:100%;
+    left:100%;
+}
+
+.markdown.previous.transit-right{
+    left:0;
+    transition: left 400ms ease;
+}
+.markdown.current.transit-right{
+    left:100%;
+    transition: left 400ms ease;
+}
+.markdown.current.transit-left{
+    left:-100%;
+    transition: left 400ms ease;
+}
+.markdown.next.transit-left{
+    left:0;
+    transition: left 400ms ease;
 }

@@ -14,6 +14,8 @@ export class PresentationPageComponent implements OnInit {
     filePath:string=null;
     slideTexts:string[]=[];
     currentPage:number=-1;
+    previousTransiting:boolean=false;
+    nextTransiting:boolean=false;
 
 
     constructor(
@@ -29,18 +31,27 @@ export class PresentationPageComponent implements OnInit {
             this.parseFile();
             this.currentPage=0;//set currentPage
         });
-        // this.parseTest(text);
     }
 
     previousPage(){
+        if (this.previousTransiting) return;
         if(this.currentPage>0){
-            this.currentPage--;
+            this.previousTransiting=true;
+            setTimeout(()=>{
+                this.currentPage--;
+                this.previousTransiting=false;
+            },420);
         }
     }
 
     nextPage(){
+        if (this.nextTransiting) return;
         if (this.currentPage<this.slideTexts.length-1) {
-            this.currentPage++;
+            this.nextTransiting=true;
+            setTimeout(()=>{
+                this.currentPage++;
+                this.nextTransiting=false;
+            },420);
         }
     }
 

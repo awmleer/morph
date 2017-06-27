@@ -5,7 +5,10 @@ import {NgxElectronService} from "../../services/ngx-electron/ngx-electron.servi
 @Component({
     selector: 'app-presentation-page',
     templateUrl: './presentation-page.component.html',
-    styleUrls: ['./presentation-page.component.scss']
+    styleUrls: [
+        './presentation-page.component.scss',
+        '../../../assets/themes/github.css'
+    ]
 })
 export class PresentationPageComponent implements OnInit {
     filePath:string=null;
@@ -54,9 +57,13 @@ export class PresentationPageComponent implements OnInit {
             lines[k]+='\n';
             if (lines[k].match(/^ *```/)) {
                 inCodeBlock=!inCodeBlock;
+                temp+=lines[k];
                 continue;
             }
-            if (inCodeBlock) continue;
+            if (inCodeBlock){
+                temp+=lines[k];
+                continue;
+            }
             if (lines[k].match(/^ *# /)) { //first heading
                 if (temp != '') {
                     slideTexts.push(temp);

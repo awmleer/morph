@@ -66,15 +66,7 @@ export class PresentationPageComponent implements OnInit {
                 temp+=lines[k];
                 continue;
             }
-            if (lines[k].match(/^ *# /)) { //first heading
-                if (temp != '') {
-                    slideTexts.push(temp);
-                    temp='';
-                }
-                slideTexts.push(lines[k]);
-                continue;
-            }
-            if (lines[k].match(/^ *###? /)) { //second or third heading
+            if (lines[k].match(/^ *##?#? /)) { //heading
                 if (temp != '') {
                     slideTexts.push(temp);
                 }

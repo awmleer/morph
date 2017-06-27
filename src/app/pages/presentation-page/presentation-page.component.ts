@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import marked from 'marked';
 import {ActivatedRoute, Params} from "@angular/router";
 import {NgxElectronService} from "../../services/ngx-electron/ngx-electron.service";
 
@@ -10,6 +9,7 @@ import {NgxElectronService} from "../../services/ngx-electron/ngx-electron.servi
 })
 export class PresentationPageComponent implements OnInit {
     filePath:string=null;
+    slideTexts:string[]=[];
 
     constructor(
         private electronService:NgxElectronService,
@@ -27,15 +27,15 @@ export class PresentationPageComponent implements OnInit {
 
     parseFile(){
         let text = this.electronService.readFile(this.filePath);
-        let slideStrings = this.splitText(text);
-        console.log(slideStrings);
+        this.slideTexts=this.splitText(text);
+        console.log(this.slideTexts);
     }
 
     splitText(text:string):string[]{
         let lines = text.split('\n');
         let inCodeBlock:boolean = false;
         let temp:string='';
-        let slideStrings:string[]=[];
+        let slideTexts:string[]=[];
         for (let k in  lines) {
             lines[k]+='\n';
             if (lines[k].match(/^ *```/)) {
@@ -45,15 +45,15 @@ export class PresentationPageComponent implements OnInit {
             if (inCodeBlock) continue;
             if (lines[k].match(/^ *# /)) { //first heading
                 if (temp != '') {
-                    slideStrings.push(temp);
+                    slideTexts.push(temp);
                     temp='';
                 }
-                slideStrings.push(lines[k]);
+                slideTexts.push(lines[k]);
                 continue;
             }
             if (lines[k].match(/^ *###? /)) { //second or third heading
                 if (temp != '') {
-                    slideStrings.push(temp);
+                    slideTexts.push(temp);
                 }
                 temp=lines[k];
                 continue;
@@ -61,9 +61,9 @@ export class PresentationPageComponent implements OnInit {
             temp+=lines[k];
         }
         if (temp != '') {
-            slideStrings.push(temp);
+            slideTexts.push(temp);
         }
-        return slideStrings;
+        return slideTexts;
     }
 
     // parseTest(text:string){

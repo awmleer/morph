@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PresentationPageComponent } from './pages/presentation-page/presentation-page.component';
+import { MarkdownToHtmlPipe } from './pipes/markdown-to-html.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomePageComponent,
-        PresentationPageComponent
+        PresentationPageComponent,
+        MarkdownToHtmlPipe
     ],
     imports: [
         BrowserModule,

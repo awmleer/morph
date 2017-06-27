@@ -1,3 +1,4 @@
 <p>
-  presentation-page works!
+    presentation-page works!
 </p>
+<div *ngFor="let slideText of slideTexts" [innerHtml]="slideText | markdownToHtml"></div>

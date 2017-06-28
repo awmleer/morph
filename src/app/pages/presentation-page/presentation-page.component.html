@@ -9,3 +9,6 @@
 
     <div>{{currentPage+1}}/{{slideTexts.length}}</div>
 </div>
+<div class="progress-bar">
+    <div class="current-progress" [ngStyle]="{'width':(currentPage+1)*100/slideTexts.length+'%'}"></div>
+</div>

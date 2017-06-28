@@ -1,5 +1,5 @@
 .background{
-    width:100%;
+    width:100vw;
     height: 100vh;
     cursor: default;
     user-select: none;
@@ -12,23 +12,23 @@
     position: fixed;
     bottom:20px;
     text-align: center;
-    width:100%;
+    width:100vw;
     z-index:1000;
     user-select: none;
 }
 
 .markdown{
-    width:80%;
+    width:80vw;
     height: 80vh;
     overflow-y: scroll;
     position: absolute;
     top:0;
-    padding:10vh 10%;
+    padding:10vh 10vw;
     user-select: none;
 }
 
 .markdown.previous{
-    left:-100%;
+    left:-100vw;
 }
 
 .markdown.current{
@@ -36,7 +36,7 @@
 }
 
 .markdown.next{
-    left:100%;
+    left:100vw;
 }
 
 .markdown.previous.transit-right{
@@ -44,11 +44,11 @@
     transition: left 400ms ease;
 }
 .markdown.current.transit-right{
-    left:100%;
+    left:100vw;
     transition: left 400ms ease;
 }
 .markdown.current.transit-left{
-    left:-100%;
+    left:-100vw;
     transition: left 400ms ease;
 }
 .markdown.next.transit-left{

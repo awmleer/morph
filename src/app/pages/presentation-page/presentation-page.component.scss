@@ -1,6 +1,11 @@
 .background{
     width:100%;
     height: 100vh;
+    cursor: default;
+    user-select: none;
+}
+.background.mouse-stopped{
+    cursor: none;
 }
 
 .control-button-group{
@@ -9,6 +14,7 @@
     text-align: center;
     width:100%;
     z-index:1000;
+    user-select: none;
 }
 
 .markdown{
@@ -18,6 +24,7 @@
     position: absolute;
     top:0;
     padding:10vh 10%;
+    user-select: none;
 }
 
 .markdown.previous{

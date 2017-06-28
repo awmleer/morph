@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {NgxElectronService} from "../../services/ngx-electron/ngx-electron.service";
 
@@ -16,11 +16,15 @@ export class PresentationPageComponent implements OnInit {
     currentPage:number=-1;
     previousTransiting:boolean=false;
     nextTransiting:boolean=false;
+    mouseMoving:boolean=false;
+    mouseMovingTemp:boolean=false;
+    mouseMovingCount:number=0;
 
 
     constructor(
         private electronService:NgxElectronService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private zone: NgZone
     ) { }
 
     ngOnInit() {
@@ -31,6 +35,25 @@ export class PresentationPageComponent implements OnInit {
             this.parseFile();
             this.currentPage=0;//set currentPage
         });
+        setInterval(()=>{
+            if (this.mouseMovingTemp==false) {
+                this.mouseMovingCount++;
+            }
+            if (this.mouseMovingCount > 10) {
+                this.zone.run(()=>{
+                    this.mouseMoving=false;
+                });
+            }
+        },200);
+        document.onmousemove=()=>{
+            this.mouseMovingTemp=false;
+            this.mouseMovingCount=0;
+            if (this.mouseMoving == false) {
+                this.zone.run(()=>{
+                    this.mouseMoving=true;
+                });
+            }
+        };
     }
 
     previousPage(){

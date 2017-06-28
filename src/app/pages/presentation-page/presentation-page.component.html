@@ -2,7 +2,7 @@
     <button (click)="previousPage()">Previous</button>
     <button (click)="nextPage()">Next</button>
 </div>
-<div *ngIf="currentPage>=0" class="background">
+<div *ngIf="currentPage>=0" class="background" [class.mouse-stopped]="!mouseMoving">
     <div class="markdown previous" [class.transit-right]="previousTransiting" *ngIf="currentPage>=1" [innerHtml]="slideTexts[currentPage-1] | markdownToHtml"></div>
     <div class="markdown current" [class.transit-right]="previousTransiting" [class.transit-left]="nextTransiting" [innerHtml]="slideTexts[currentPage] | markdownToHtml"></div>
     <div class="markdown next" [class.transit-left]="nextTransiting" *ngIf="currentPage<slideTexts.length-1" [innerHtml]="slideTexts[currentPage+1] | markdownToHtml"></div>

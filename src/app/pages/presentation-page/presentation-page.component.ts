@@ -1,6 +1,7 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {NgxElectronService} from "../../services/ngx-electron/ngx-electron.service";
+import * as mousetrap from 'mousetrap';
 
 @Component({
     selector: 'app-presentation-page',
@@ -54,6 +55,7 @@ export class PresentationPageComponent implements OnInit {
                 });
             }
         };
+        this.bindKeyboardShortcuts();
     }
 
     previousPage(){
@@ -113,6 +115,35 @@ export class PresentationPageComponent implements OnInit {
             slideTexts.push(temp);
         }
         return slideTexts;
+    }
+
+    bindKeyboardShortcuts(){
+        mousetrap.bind('space',()=>{
+            this.zone.run(()=>{
+                this.nextPage();
+            });
+            return false;
+        });
+        mousetrap.bind('right',()=>{
+            this.zone.run(()=>{
+                this.nextPage();
+            });
+        });
+        mousetrap.bind('left',()=>{
+            this.zone.run(()=>{
+                this.previousPage();
+            });
+        });
+        mousetrap.bind('enter',()=>{
+            this.zone.run(()=>{
+                this.nextPage();
+            });
+        });
+        mousetrap.bind('return',()=>{
+            this.zone.run(()=>{
+                this.nextPage();
+            });
+        });
     }
 
 }

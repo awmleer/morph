@@ -8,7 +8,6 @@ import * as highlight from 'highlightjs';
 export class MarkdownToHtmlPipe implements PipeTransform {
 
     transform(text: any): string {
-        console.log(highlight);
         let m = marked.setOptions({
             highlight: function (code) {
                 return highlight.highlightAuto(code).value;

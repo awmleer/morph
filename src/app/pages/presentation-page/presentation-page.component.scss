@@ -1,25 +1,38 @@
-.control-layer{
+#control-layer{
     position: fixed;
     top:0;
     left:0;
     width:100vw;
     height: 100vh;
     user-select: none;
+    cursor: default;
+    z-index: 100;
     .page-number{
         position: absolute;
         right: 0;
         top: 0;
         padding: 0.4em 0.8em;
+        color: #949494;
     }
     .control-button-group{
+        user-select: element;
         position: absolute;
         bottom:20px;
-        text-align: center;
-        width:100%;
+        right: 30px;
         z-index:1000;
+        .button{
+            font-size: 48px;
+            padding: 6px;
+            margin-left: 24px;
+            color: #949494;
+            transition: color 300ms ease;
+        }
+        .button:hover{
+            color: #232323;
+        }
     }
 }
-.control-layer.mouse-stopped{
+#control-layer.mouse-stopped{
     transition: opacity 500ms ease, left 1ms linear 500ms;
     opacity: 0;
     left: -100vw;
@@ -38,7 +51,7 @@
 }
 
 
-.progress-bar{
+#progress-bar{
     position: fixed;
     bottom:0;
     left:0;

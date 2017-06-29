@@ -1,0 +1,21 @@
+{
+  "name": "morph",
+  "description": "",
+  "main": "electron/electron.js",
+  "authors": [
+    "awmleer <awmleer@sparker.xyz>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Buttons": "^2.0.0"
+  }
+}

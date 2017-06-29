@@ -1,6 +1,11 @@
 # morph
 Use Markdown to create slides.
 
+## Dev prepare
+```bash
+npm install
+bower install
+```
 
 ## Dev start script
 ```bash

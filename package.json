@@ -43,6 +43,7 @@
     "electron": "^1.6.8",
     "electron-connect": "^0.4.8",
     "electron-packager": "^8.7.1",
+    "font-awesome": "^4.7.0",
     "highlightjs": "^9.10.0",
     "marked": "^0.3.6",
     "mousetrap": "^1.6.1",

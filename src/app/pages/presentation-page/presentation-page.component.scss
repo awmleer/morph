@@ -1,21 +1,42 @@
+.control-layer{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height: 100vh;
+    user-select: none;
+    .page-number{
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0.4em 0.8em;
+    }
+    .control-button-group{
+        position: absolute;
+        bottom:20px;
+        text-align: center;
+        width:100%;
+        z-index:1000;
+    }
+}
+.control-layer.mouse-stopped{
+    transition: opacity 500ms ease, left 1ms linear 500ms;
+    opacity: 0;
+    left: -100vw;
+    cursor: none;
+}
+
 .background{
     width:100vw;
     height: 100vh;
     cursor: default;
     user-select: none;
+
 }
 .background.mouse-stopped{
     cursor: none;
 }
 
-.control-button-group{
-    position: fixed;
-    bottom:20px;
-    text-align: center;
-    width:100vw;
-    z-index:1000;
-    user-select: none;
-}
 
 .progress-bar{
     position: fixed;

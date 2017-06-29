@@ -1,14 +1,19 @@
-<div class="control-button-group">
-    <button (click)="previousPage()">Previous</button>
-    <button (click)="nextPage()">Next</button>
+<div class="control-layer" [class.mouse-stopped]="!mouseMoving">
+    <div class="page-number">{{currentPage+1}}/{{slideTexts.length}}</div>
+    <div class="control-button-group">
+        <button (click)="previousPage()">Previous</button>
+        <button (click)="nextPage()">Next</button>
+    </div>
 </div>
+
 <div *ngIf="currentPage>=0" class="background" [class.mouse-stopped]="!mouseMoving">
+
     <div class="markdown previous" [class.transit-right]="previousTransiting" *ngIf="currentPage>=1" [innerHtml]="slideTexts[currentPage-1] | markdownToHtml"></div>
     <div class="markdown current" [class.transit-right]="previousTransiting" [class.transit-left]="nextTransiting" [innerHtml]="slideTexts[currentPage] | markdownToHtml"></div>
     <div class="markdown next" [class.transit-left]="nextTransiting" *ngIf="currentPage<slideTexts.length-1" [innerHtml]="slideTexts[currentPage+1] | markdownToHtml"></div>
 
-    <div>{{currentPage+1}}/{{slideTexts.length}}</div>
 </div>
+
 <div class="progress-bar">
     <div class="current-progress" [ngStyle]="{'width':(currentPage+1)*100/slideTexts.length+'%'}"></div>
 </div>

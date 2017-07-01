@@ -1,5 +1,4 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
-import { client } from 'electron-connect';
 import * as path from 'path';
 import { environment } from '../environments/environment'
 
@@ -45,7 +44,6 @@ function createWindow() {
 
     initMainListener();
 
-    client.create(applicationRef);
 }
 
 

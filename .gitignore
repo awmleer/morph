@@ -6,6 +6,7 @@
 /out-tsc
 /tasks/*.js
 /tasks/*/*.js
+/morph-darwin-x64/
 
 # dependencies
 /node_modules

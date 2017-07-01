@@ -14,3 +14,14 @@ npm run ng.watch
 npm run electron.watch
 ```
 
+## Features
+
+- Easy to use
+- Page transition animation
+- Auto hide cursor when it stops moving for about 2 seconds
+
+## Drawbacks
+
+- App package is a little bit large
+- Lack of user style support
+- ​

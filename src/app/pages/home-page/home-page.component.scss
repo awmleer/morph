@@ -1,0 +1,25 @@
+.drag-holder{
+    display: block;
+    width:80vw;
+    margin:10vh 10vw;
+    height: 80vh;
+    background: #d9d9d9;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    div{
+        position: absolute;
+        width:100%;
+        top:50%;
+        transform: translateY(-50%);
+        left:0;
+        i{
+            color: #FFFFFF;
+            font-size: 60px;
+        }
+        p{
+            font-size: 16px;
+            color: #7b7b7b;
+        }
+    }
+}

@@ -1,10 +1,9 @@
-<p>
-    home-page works! <i class="fa fa-terminal"></i>
-</p>
-<div #holder style="height: 100px;width: 100%;background-color: #42A5F5">
-    Drag your file here
+<div #holder class="drag-holder">
+    <div>
+        <i class="fa fa-file-text"></i>
+        <p>Drag your file here</p>
+    </div>
 </div>
 
-<button (click)="startPresentation()">Start Presentation</button>
+<!--<button (click)="startPresentation()">Start Presentation</button>-->
 
-<div [innerHtml]="parsedHtml"></div>

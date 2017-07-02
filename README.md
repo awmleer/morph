@@ -1,6 +1,8 @@
 # morph
 Use Markdown to create slides.
 
+![demo](./doc/assets/demo.gif)
+
 ## Dev prepare
 ```bash
 npm install

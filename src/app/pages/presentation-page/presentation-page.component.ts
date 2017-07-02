@@ -17,6 +17,8 @@ export class PresentationPageComponent implements OnInit {
     currentPage:number=-1;
     previousTransiting:boolean=false;
     nextTransiting:boolean=false;
+    pausing:boolean=false;
+    pauseTransitingOut=false;
     mouseMoving:boolean=false;
     mouseMovingTemp:boolean=false;
     mouseMovingCount:number=0;
@@ -117,6 +119,20 @@ export class PresentationPageComponent implements OnInit {
         return slideTexts;
     }
 
+    togglePause(){
+        if (this.pausing) {
+            this.pauseTransitingOut=true;
+            setTimeout(()=>{
+                this.zone.run(()=>{
+                    this.pausing=false;
+                    this.pauseTransitingOut=false;
+                });
+            },1000);
+        }else {
+            this.pausing=true;
+        }
+    }
+
     bindKeyboardShortcuts(){
         mousetrap.bind('space',()=>{
             this.zone.run(()=>{
@@ -142,6 +158,11 @@ export class PresentationPageComponent implements OnInit {
         mousetrap.bind('return',()=>{
             this.zone.run(()=>{
                 this.nextPage();
+            });
+        });
+        mousetrap.bind('p',()=>{
+            this.zone.run(()=>{
+                this.togglePause();
             });
         });
     }

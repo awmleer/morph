@@ -75,6 +75,11 @@
         .button:hover{
             color: #232323;
         }
+        .button:disabled{
+            background: none!important;
+            border:none!important;
+            cursor: pointer!important;
+        }
     }
 }
 #control-layer.mouse-stopped{

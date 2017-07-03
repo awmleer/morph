@@ -1,3 +1,41 @@
+@media all{
+    .markdown .content{
+        font-size: 12px;
+    }
+}
+@media all and (min-width: 200px) {
+    .markdown .content{
+        font-size: 16px;
+    }
+}
+@media all and (min-width: 400px) {
+    .markdown .content{
+        font-size: 20px;
+    }
+}
+@media all and (min-width: 600px) {
+    .markdown .content{
+        font-size: 24px;
+    }
+}
+@media all and (min-width: 800px) {
+    .markdown .content{
+        font-size: 28px;
+    }
+}
+@media all and (min-width: 1000px) {
+    .markdown .content{
+        font-size: 32px;
+    }
+}
+@media all and (min-width: 1200px){
+    .markdown .content{
+        font-size: 36px;
+    }
+}
+
+
 .markdown .content /deep/ table {
     width: 100%;
 }
+

@@ -8,6 +8,7 @@ import * as mousetrap from 'mousetrap';
     templateUrl: './presentation-page.component.html',
     styleUrls: [
         './presentation-page.component.scss',
+        '../../../assets/themes/common.scss',
         '../../../assets/themes/github.scss'
     ]
 })

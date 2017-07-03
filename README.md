@@ -21,6 +21,8 @@ npm run electron.watch
 - Easy to use
 - Page transition animation
 - Auto hide cursor when it stops moving for about 2 seconds
+- Pause mode (black screen)
+- XSS protection
 
 ## Drawbacks
 

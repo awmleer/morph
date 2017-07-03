@@ -64,7 +64,7 @@ export class PresentationPageComponent implements OnInit {
     }
 
     previousPage(){
-        if (this.previousTransiting) return;
+        if (this.previousTransiting || this.nextTransiting) return;
         if(this.currentPage>0){
             this.previousTransiting=true;
             setTimeout(()=>{
@@ -75,7 +75,7 @@ export class PresentationPageComponent implements OnInit {
     }
 
     nextPage(){
-        if (this.nextTransiting) return;
+        if (this.nextTransiting || this.previousTransiting) return;
         if (this.currentPage<this.slideTexts.length-1) {
             this.nextTransiting=true;
             setTimeout(()=>{

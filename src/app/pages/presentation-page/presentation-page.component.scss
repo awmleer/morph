@@ -1,16 +1,32 @@
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+@keyframes fade-in-delay {
+    0% {opacity: 0;}
+    20% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+
+#root{
+    width:100vw;
+    height: 100vh;
+    animation: fade-in-delay 2s ease;
+    animation-iteration-count: 1;
+}
+
+
 #pause-layer{
     position: fixed;
     z-index: 20;
     width:100vw;
     height:100vh;
-    animation: pause-layer-in 1s ease;
+    animation: fade-in 1s ease;
     animation-iteration-count: 1;
     background: #000000;
 }
-@keyframes pause-layer-in {
-    from {opacity: 0;}
-    to {opacity:1;}
-}
+
 #pause-layer.transit-out{
     opacity: 0;
     transition: opacity 1s ease;
@@ -63,7 +79,6 @@
     height: 100vh;
     cursor: default;
     user-select: none;
-
 }
 .background.mouse-stopped{
     cursor: none;

@@ -31,7 +31,6 @@ export class PresentationPageComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.electronService.send('enterFullScreen');
         this.route.params.subscribe((params:Params)=>{
             console.log(params);
             this.filePath=params['filePath'];
@@ -58,6 +57,10 @@ export class PresentationPageComponent implements OnInit {
             }
         };
         this.bindKeyboardShortcuts();
+    }
+
+    ngAfterViewInit(){
+        this.electronService.send('enterFullScreen');
     }
 
     previousPage(){

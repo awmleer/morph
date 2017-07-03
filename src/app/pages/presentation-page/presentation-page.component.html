@@ -3,7 +3,12 @@
 
     <div id="control-layer" [class.mouse-stopped]="!mouseMoving">
         <div class="page-number">{{nextTransiting?(currentPage+2):previousTransiting?(currentPage):(currentPage+1)}}/{{slideTexts.length}}</div>
-        <div class="control-button-group">
+        <div class="control-button-group left">
+            <button class="button button-borderless" (click)="toggleFullScreen()">
+                <i class="fa fa-window-maximize" style="font-size: 36px"></i>
+            </button>
+        </div>
+        <div class="control-button-group right">
             <button class="button button-borderless" (click)="previousPage()"><i class="fa fa-angle-left"></i></button>
             <button class="button button-borderless" (click)="nextPage()"><i class="fa fa-angle-right"></i></button>
         </div>

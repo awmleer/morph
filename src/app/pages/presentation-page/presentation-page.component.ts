@@ -140,6 +140,10 @@ export class PresentationPageComponent implements OnInit {
         }
     }
 
+    toggleFullScreen(){
+        this.electronService.send('toggleFullScreen');
+    }
+
     bindKeyboardShortcuts(){
         mousetrap.bind('space',()=>{
             this.zone.run(()=>{
@@ -165,6 +169,11 @@ export class PresentationPageComponent implements OnInit {
         mousetrap.bind('return',()=>{
             this.zone.run(()=>{
                 this.nextPage();
+            });
+        });
+        mousetrap.bind('esc',()=>{
+            this.zone.run(()=>{
+                this.toggleFullScreen();
             });
         });
         mousetrap.bind('p',()=>{

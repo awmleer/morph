@@ -21,10 +21,11 @@ function initMainListener() {
 
     });
     ipcMain.on('enterFullScreen',(event,data)=>{
-        console.log('got enterFullScreen event');
         applicationRef.setFullScreen(true);
-        // event.returnValue=true;
-    })
+    });
+    ipcMain.on('toggleFullScreen',(event,data)=>{
+        applicationRef.setFullScreen(!applicationRef.isFullScreen());
+    });
 }
 
 function createWindow() {

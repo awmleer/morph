@@ -8,6 +8,7 @@ import * as mousetrap from 'mousetrap';
     templateUrl: './presentation-page.component.html',
     styleUrls: [
         './presentation-page.component.scss',
+        './animation.scss',
         '../../../assets/themes/common.scss',
         '../../../assets/themes/github.scss'
     ]
@@ -15,6 +16,7 @@ import * as mousetrap from 'mousetrap';
 export class PresentationPageComponent implements OnInit {
     @ViewChild('currentSlide') currentSlideRef : ElementRef;
     filePath:string=null;
+    animationType:string='';
     slideTexts:string[]=[];
     currentPage:number=-1;
     previousTransiting:boolean=false;
@@ -36,6 +38,7 @@ export class PresentationPageComponent implements OnInit {
         this.route.params.subscribe((params:Params)=>{
             console.log(params);
             this.filePath=params['filePath'];
+            this.animationType=params['animationType'];
             this.parseFile();
             this.currentPage=0;//set currentPage
         });

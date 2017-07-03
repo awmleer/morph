@@ -19,7 +19,8 @@ export class HomePageComponent implements OnInit {
     startPresentation(){
         if (this.filePath) {
             this.router.navigate(['/presentation',{
-                filePath: this.filePath
+                filePath: this.filePath,
+                animationType: 'move'
             }]);
         }
     }

@@ -1,0 +1,28 @@
+.markdown.previous{
+    left:-100vw;
+}
+
+.markdown.current{
+    left:0;
+}
+
+.markdown.next{
+    left:100vw;
+}
+
+.markdown.move.previous.transit-right{
+    left:0;
+    transition: left 400ms ease;
+}
+.markdown.move.current.transit-right{
+    left:100vw;
+    transition: left 400ms ease;
+}
+.markdown.move.current.transit-left{
+    left:-100vw;
+    transition: left 400ms ease;
+}
+.markdown.move.next.transit-left{
+    left:0;
+    transition: left 400ms ease;
+}

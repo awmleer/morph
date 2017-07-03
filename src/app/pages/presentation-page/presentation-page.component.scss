@@ -42,6 +42,10 @@
     user-select: none;
     cursor: default;
     z-index: 10;
+    pointer-events: none;
+    *{
+        pointer-events: auto;
+    }
     .page-number{
         position: absolute;
         right: 0;

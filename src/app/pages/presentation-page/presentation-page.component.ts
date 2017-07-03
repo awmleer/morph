@@ -1,4 +1,4 @@
-import {Component, NgZone, OnInit} from '@angular/core';
+import {Component, NgZone, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {NgxElectronService} from "../../services/ngx-electron/ngx-electron.service";
 import * as mousetrap from 'mousetrap';
@@ -13,6 +13,7 @@ import * as mousetrap from 'mousetrap';
     ]
 })
 export class PresentationPageComponent implements OnInit {
+    @ViewChild('currentSlide') currentSlideRef : ElementRef;
     filePath:string=null;
     slideTexts:string[]=[];
     currentPage:number=-1;
@@ -71,6 +72,7 @@ export class PresentationPageComponent implements OnInit {
             setTimeout(()=>{
                 this.currentPage--;
                 this.previousTransiting=false;
+                this.currentSlideRef.nativeElement.scrollTop=0;
             },420);
         }
     }
@@ -82,6 +84,7 @@ export class PresentationPageComponent implements OnInit {
             setTimeout(()=>{
                 this.currentPage++;
                 this.nextTransiting=false;
+                this.currentSlideRef.nativeElement.scrollTop=0;
             },420);
         }
     }

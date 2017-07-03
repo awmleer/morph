@@ -239,7 +239,7 @@
     overflow: hidden;
     background: transparent;
     border: 0;
-    border-bottom: 1px solid #dfe2e5;
+    border-bottom: 3px solid #dfe2e5;
 }
 
 .markdown .content /deep/ hr::before {
@@ -448,9 +448,9 @@
     color: #444d56;
     vertical-align: middle;
     background-color: #fafbfc;
-    border: solid 1px #c6cbd1;
+    border: solid 2px #c6cbd1;
     border-bottom-color: #959da5;
-    border-radius: 3px;
+    border-radius: 6px;
     box-shadow: inset 0 -1px 0 #959da5;
 }
 
@@ -575,12 +575,12 @@
 .markdown .content /deep/ table th,
 .markdown .content /deep/ table td {
     padding: 6px 13px;
-    border: 1px solid #dfe2e5;
+    border: 2px solid #dfe2e5;
 }
 
 .markdown .content /deep/ table tr {
     background-color: #fff;
-    border-top: 1px solid #c6cbd1;
+    border-top: 2px solid #c6cbd1;
 }
 
 .markdown .content /deep/ table tr:nth-child(2n) {
@@ -672,7 +672,7 @@
     color: #444d56;
     vertical-align: middle;
     background-color: #fafbfc;
-    border: solid 1px #d1d5da;
+    border: solid 2px #d1d5da;
     border-bottom-color: #c6cbd1;
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 #c6cbd1;

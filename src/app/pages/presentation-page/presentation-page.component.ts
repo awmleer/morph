@@ -26,6 +26,10 @@ export class PresentationPageComponent implements OnInit {
     mouseMoving:boolean=false;
     mouseMovingTemp:boolean=false;
     mouseMovingCount:number=0;
+    animationTime={
+        'move': 400,
+        'glue': 800
+    };
 
 
     constructor(
@@ -76,7 +80,7 @@ export class PresentationPageComponent implements OnInit {
                 this.currentPage--;
                 this.previousTransiting=false;
                 this.currentSlideRef.nativeElement.scrollTop=0;
-            },420);
+            },this.animationTime[this.animationType]+20);
         }
     }
 
@@ -88,7 +92,7 @@ export class PresentationPageComponent implements OnInit {
                 this.currentPage++;
                 this.nextTransiting=false;
                 this.currentSlideRef.nativeElement.scrollTop=0;
-            },420);
+            },this.animationTime[this.animationType]+20);
         }
     }
 

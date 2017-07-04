@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit {
         if (this.filePath) {
             this.router.navigate(['/presentation',{
                 filePath: this.filePath,
-                animationType: 'move'
+                animationType: 'glue'
             }]);
         }
     }

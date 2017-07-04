@@ -10,6 +10,7 @@
     left:100vw;
 }
 
+//move
 .markdown.move.previous.transit-right{
     left:0;
     transition: left 400ms ease;
@@ -25,4 +26,43 @@
 .markdown.move.next.transit-left{
     left:0;
     transition: left 400ms ease;
+}
+
+
+//glue
+.markdown.glue.current.transit-right{
+    transform-origin: 0% 50%;
+    animation: rotateLeftSideFirst .8s both ease-in;
+}
+.markdown.glue.previous.transit-right{
+    animation: moveFromLeft .6s ease both;
+    animation-delay: .2s;
+}
+.markdown.glue.current.transit-left{
+    transform-origin: 0% 50%;
+    animation: rotateRightSideFirst .8s both ease-in;
+}
+.markdown.glue.next.transit-left{
+    animation: moveFromRight .6s ease both;
+    animation-delay: .2s;
+}
+
+
+
+
+@keyframes moveFromRight {
+    to { transform: translateX(-100%); }
+}
+@keyframes moveFromLeft {
+    to { transform: translateX(100%); }
+}
+@keyframes rotateRightSideFirst {
+    0% { }
+    40% { transform: rotateY(15deg); opacity: .8; animation-timing-function: ease-out; }
+    100% { transform: scale(0.8) translateZ(-200px); opacity:0; }
+}
+@keyframes rotateLeftSideFirst {
+    0% { }
+    40% { transform: rotateY(-15deg); opacity: .8; animation-timing-function: ease-out; }
+    100% { transform: scale(0.8) translateZ(-200px); opacity:0; }
 }

@@ -94,6 +94,7 @@
     height: 100vh;
     cursor: default;
     user-select: none;
+    background: #000000;
 }
 .background.mouse-stopped{
     cursor: none;
@@ -123,4 +124,13 @@
     user-select: none;
 }
 
+.markdown.previous{
+    z-index: 6;
+}
+.markdown.current{
+    z-index: 5;
+}
+.markdown.next{
+    z-index: 7;
+}
 

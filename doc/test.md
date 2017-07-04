@@ -18,6 +18,14 @@ This is part one...
 
 
 
+### Images
+
+![test](./assets/testPicture.png)
+
+
+
+
+
 ### Code
 
 ```json

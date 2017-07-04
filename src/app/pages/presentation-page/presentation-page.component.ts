@@ -98,17 +98,14 @@ export class PresentationPageComponent implements OnInit {
 
     parseFile(){
         let text = this.electronService.readFile(this.filePath);
-        this.slideTexts=this.splitText(text);
-        console.log(this.slideTexts);
-    }
-
-    splitText(text:string):string[]{
+        let fileDir = this.filePath.replace(/(?:.(?!\/))+$/,'/');
         let lines = text.split('\n');
         let inCodeBlock:boolean = false;
         let temp:string='';
-        let slideTexts:string[]=[];
+        this.slideTexts=[];
         for (let k in  lines) {
             lines[k]+='\n';
+            //handle code blocks
             if (lines[k].match(/^ *```/)) {
                 inCodeBlock=!inCodeBlock;
                 temp+=lines[k];
@@ -118,9 +115,12 @@ export class PresentationPageComponent implements OnInit {
                 temp+=lines[k];
                 continue;
             }
-            if (lines[k].match(/^ *##?#? /)) { //heading
+            //fix image file paths
+            temp=temp.replace(/!\[(.*)\]\(\.\/(.+)\)/g,`![$1](${fileDir}$2)`);
+            //handle headings
+            if (lines[k].match(/^ *##?#? /)) {
                 if (temp != '') {
-                    slideTexts.push(temp);
+                    this.slideTexts.push(temp);
                 }
                 temp=lines[k];
                 continue;
@@ -128,9 +128,8 @@ export class PresentationPageComponent implements OnInit {
             temp+=lines[k];
         }
         if (temp != '') {
-            slideTexts.push(temp);
+            this.slideTexts.push(temp);
         }
-        return slideTexts;
     }
 
     togglePause(){

@@ -28,4 +28,9 @@ npm run electron.watch
 
 - App package is a little bit large
 - Lack of user style support
-- ​
+
+## References
+
+- [PageTransitions](https://github.com/codrops/PageTransitions)
+- [Buttons](https://github.com/alexwolfe/Buttons/)
+

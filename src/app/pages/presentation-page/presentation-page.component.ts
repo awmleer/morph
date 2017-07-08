@@ -98,7 +98,13 @@ export class PresentationPageComponent implements OnInit {
 
     parseFile(){
         let text = this.electronService.readFile(this.filePath);
-        let fileDir = this.filePath.replace(/(?:.(?!\/))+$/,'/');
+        let fileDir;
+        let isWindows=navigator.appVersion.indexOf('Win')!=-1;
+        if(isWindows){//for windows
+            fileDir = this.filePath.replace(/(?:.(?!\\))+$/,'\\');
+        }else{
+            fileDir = this.filePath.replace(/(?:.(?!\/))+$/,'/');
+        }
         let lines = text.split('\n');
         let inCodeBlock:boolean = false;
         let temp:string='';
@@ -116,7 +122,14 @@ export class PresentationPageComponent implements OnInit {
                 continue;
             }
             //fix image file paths
-            temp=temp.replace(/!\[(.*)\]\(\.\/(.+)\)/g,`![$1](${fileDir}$2)`);
+            if (temp.match(/!\[.*\]\(.+\)/)) {
+                if (isWindows) {
+                    temp=temp.replace(/\//g,'\\');
+                    temp=temp.replace(/!\[(.*)\]\(\.\\(.+)\)/g,`![$1](${fileDir}$2)`);
+                }else{
+                    temp=temp.replace(/!\[(.*)\]\(\.\/(.+)\)/g,`![$1](${fileDir}$2)`);
+                }
+            }
             //handle headings
             if (lines[k].match(/^ *##?#? /)) {
                 if (temp != '') {

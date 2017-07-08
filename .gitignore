@@ -8,6 +8,7 @@
 /tasks/*/*.js
 /morph-darwin-x64/
 /morph-win32-x64/
+/build/
 
 # dependencies
 /node_modules

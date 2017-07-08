@@ -31,11 +31,11 @@ function initMainListener() {
 function createWindow() {
     applicationRef = new BrowserWindow(mainWindowSettings);
     applicationRef.loadURL(`file:///${__dirname}/../index.html`);
-    applicationRef.webContents.openDevTools();
-    if (debugMode) {
-        // Open the DevTools.
-        applicationRef.webContents.openDevTools();
-    }
+    // applicationRef.webContents.openDevTools();
+    // if (debugMode) {
+    //     // Open the DevTools.
+    //     applicationRef.webContents.openDevTools();
+    // }
     applicationRef.on('closed', () => {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time

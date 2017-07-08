@@ -3,6 +3,16 @@ Use Markdown to create slides.
 
 ![demo](./doc/assets/demo.gif)
 
+
+## Features
+
+- Easy to use
+- Page transition animation
+- Auto hide cursor when it stops moving for about 2 seconds
+- Pause mode (black screen)
+- XSS protection
+
+
 ## Dev prepare
 ```bash
 npm install
@@ -16,13 +26,14 @@ npm run ng.watch
 npm run electron.watch
 ```
 
-## Features
+## Build Script
 
-- Easy to use
-- Page transition animation
-- Auto hide cursor when it stops moving for about 2 seconds
-- Pause mode (black screen)
-- XSS protection
+```bash
+npm run build.prod
+cp package.json ./dist/package.json
+electron-packager dist morph --platform=win32 --overwrite
+electron-packager dist morph --platform=darwin --overwrite
+```
 
 ## Drawbacks
 

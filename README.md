@@ -1,4 +1,7 @@
 # morph
+
+[![Build Status](https://travis-ci.org/awmleer/morph.svg?branch=master)](https://travis-ci.org/awmleer/morph)
+
 Use Markdown to create slides.
 
 ![demo](./doc/assets/demo.gif)

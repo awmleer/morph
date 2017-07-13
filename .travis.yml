@@ -1,7 +1,17 @@
 language: node_js
+node_js:
+    - "node"
 install:
     - npm install
     - npm install -g bower
     - bower install
 script:
     - npm run build.prod
+cache:
+  directories:
+    - "node_modules"
+    - "bower_components"
+notifications:
+  email:
+    on_success: never
+    on_failure: always

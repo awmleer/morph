@@ -9,6 +9,9 @@
             </button>
         </div>
         <div class="control-button-group right">
+            <button class="button button-borderless" (click)="toggleHighlightCursor()"  style="font-size: 34px;height: 34px;position: relative;bottom: 4px">
+                <i class="fa" [class.fa-circle]="highlightCursor" [class.fa-circle-o]="!highlightCursor"></i>
+            </button>
             <button class="button button-borderless" (click)="previousPage()" [disabled]="currentPage==0">
                 <i class="fa fa-angle-left"></i>
             </button>
@@ -18,7 +21,7 @@
         </div>
     </div>
 
-    <div *ngIf="currentPage>=0" class="background" [class.mouse-stopped]="!mouseMoving">
+    <div *ngIf="currentPage>=0" class="background" [class.mouse-stopped]="!mouseMoving" [class.highlight-cursor]="highlightCursor">
         <div class="markdown previous {{animationType}}" [class.transit-right]="previousTransiting" *ngIf="currentPage>=1">
             <div class="content" [innerHtml]="slideTexts[currentPage-1] | markdownToHtml | sanitizeHtml"></div>
         </div>

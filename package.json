@@ -6,11 +6,10 @@
   "scripts": {
     "ng": "ng",
     "ng.watch": "npm run start.watch",
-    "electron.watch": "npm run watch",
+    "electron.watch": "npm run build.electron && npm run build.watch && npm run start.electron",
     "start": "npm run build.ng && npm run build.electron && npm run start.electron",
     "start.watch": "npm run build.ng.watch",
     "start.electron": "electron dist/electron/electron.js",
-    "watch": "npm run build.electron && npm run build.watch && npm run start.electron",
     "build": "ng build --base-href . && npm run build.electron",
     "build.prod": "ng build --prod --base-href . && npm run build.electron",
     "build.ng": "ng build --base-href .",

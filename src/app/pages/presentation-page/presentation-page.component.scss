@@ -96,8 +96,11 @@
     user-select: none;
     background: #000000;
 }
+.background.highlight-cursor{
+    cursor: url("../../../assets/yellow-circle.png"), default;
+}
 .background.mouse-stopped{
-    cursor: none;
+    cursor: none!important;
 }
 
 

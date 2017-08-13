@@ -30,6 +30,7 @@ export class PresentationPageComponent implements OnInit {
         'move': 400,
         'glue': 800
     };
+    highlightCursor:boolean=false;
 
 
     constructor(
@@ -161,6 +162,10 @@ export class PresentationPageComponent implements OnInit {
 
     toggleFullScreen(){
         this.electronService.send('toggleFullScreen');
+    }
+
+    toggleHighlightCursor(){
+        this.highlightCursor=!this.highlightCursor;
     }
 
     bindKeyboardShortcuts(){

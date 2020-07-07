@@ -38,7 +38,7 @@
     "@angular/platform-browser-dynamic": "^5.2.5",
     "@angular/router": "^5.2.5",
     "core-js": "^2.5.3",
-    "electron": "^1.8.2",
+    "electron": "^7.2.4",
     "electron-connect": "0.x",
     "electron-packager": "^11.0.1",
     "font-awesome": "^4.7.0",
